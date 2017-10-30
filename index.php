@@ -12,6 +12,7 @@
 				url: 'env.php',
 				data: $(this).serialize(),
 				success: function(data) {
+					$("#result").empty();
 					$.each(data, function(i, obj) {
 						$("#result").append(
 							'Download: <a href="'+ obj.url +'">' + obj.quality + '</a><br>'
