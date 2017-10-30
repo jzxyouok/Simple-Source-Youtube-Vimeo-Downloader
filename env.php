@@ -29,7 +29,7 @@ if(isset($_REQUEST['video'])) {
 	if(isset($_POST['url'])) {
 		$url = htmlentities($_POST['url']);
 
-		Downloader::__init__($url)	;
+		Downloader::__init__($url);
 
 		switch($_POST['video']) {
 			case 'youtube': Downloader::youtube(); break;
