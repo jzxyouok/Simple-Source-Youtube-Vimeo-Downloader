@@ -17,6 +17,7 @@ class Downloader {
 
 	protected static function validation() {
 		/**
+		 * 	
 		 * only allowed url
 		 * 
 		 */
@@ -76,7 +77,7 @@ class Downloader {
 			parse_str($stream, $data);
 			$result[] = $data;
 		}
-		echo json_encode($result); // json output should be outside foreach
+		echo json_encode($result); // json output here instead of foreach
 	}
 
 	public static function vimeo() {
