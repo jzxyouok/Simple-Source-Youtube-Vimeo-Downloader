@@ -29,6 +29,8 @@ class Downloader {
 		 */
 		if(preg_match('/^(http|https):\/\/(www\.)\b('.$allowed.')\b/i', self::$url)) {
 			$video_id = explode('?v=', self::$url);
+		} else {
+			$video_id = null;
 		}
 
 		return self::$video_id = $video_id[1];
@@ -72,8 +74,9 @@ class Downloader {
 		 */
 		foreach($streams as $stream) {
 			parse_str($stream, $data);
-			echo json_encode($data);
+			$result[] = $data;
 		}
+		echo json_encode($result); // json output should be outside foreach
 	}
 
 	public static function vimeo() {
